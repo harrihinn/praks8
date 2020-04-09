@@ -1,5 +1,6 @@
 #!/bin/bash
 #väljastab 10 esimese paaris arvu summa
+#lisan kommentaari
 summa=0
 for (( arv=1; arv<11; arv++ ))
 do
