@@ -1,7 +1,6 @@
 #!/bin/bash
-#
 # algarvu tuvastamine
-#
+#tsükkel kestab kuni jääk on 0 kui jagaja=arv
 echo -e "Sisesta suvaline arv: \c"
 read arv
 # kontrollime
