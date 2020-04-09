@@ -1,0 +1,11 @@
+#!/bin/bash
+# kuu jargi kuu nimetuse valjastus ilma tsüklita
+echo -n "Sisesta kuu number: "
+read kuu_nr
+if [ $kuu_nr -ge 1 -a $kuu_nr -le 12 ]; then
+	kuud=(jaanuar veebruar marts aprill mai juuni juuli august september oktoober november detsember)
+	echo "See on ${kuud[$(($kuu_nr-1))]}";
+else
+	echo "Number peab jääma vahemikku 1-12"
+fi
+# skripti lopp
