@@ -1,23 +1,21 @@
 #!/bin/bash
-# algarvu tuvastamine
-#tsükkel kestab kuni jääk on 0 kui jagaja=arv
-echo -e "Sisesta suvaline arv: \c"
-read arv
-# kontrollime
-if [ $arv -eq 0 -o $arv -eq 1 ]; then
-        echo "$arv - ei ole algarv"
+#
+# kuu jargi kuu nimetuse valjastus
+#
+echo -e "Sisesta kuu number \c"
+read kuu_nr
+#
+# 
+if [ $kuu_nr -ge 1 -a $kuu_nr -le 12 ]; then
+	kuud=(jaanuar veebruar marts aprill mai juuni juuli august september oktoober november detsember)
+	for kuu in 1 2 3 4 5 6 7 8 9 10 11 12
+	do
+		if [ $kuu_nr -eq $kuu ]; then
+			echo "See on ${kuud[$(($kuu-1))]}"; break
+		fi
+	done
 else
-        jagaja=2
-        jaak=$(($arv % $jagaja))
-        while [ $jaak -ne 0 ]
-        do
-                jagaja=$(($jagaja + 1))
-                jaak=$(($arv % $jagaja))
-        done
-        if [ $arv -eq $jagaja ]; then
-                echo "$arv - on algarv"
-        else
-                echo "$arv - ei ole algarv"
-        fi
+	echo "Sisestasid vale number, kuu number on 1-12"
 fi
+# skripti lopp
 
